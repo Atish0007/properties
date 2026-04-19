@@ -1,0 +1,91 @@
+/* Section */
+.amenities-section {
+  padding: 80px 0;
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Normal container (Bootstrap style) */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+.amenities-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.amenities-header h2 {
+  font-size: 38px;
+  font-weight: 600;
+  color: #1e3a2f;
+}
+
+.amenities-header p {
+  margin-top: 15px;
+  color: #666;
+  font-size: 15px;
+}
+
+/* Gold underline */
+.underline {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #caa85c, #e6d3a3);
+  margin: 12px auto;
+  border-radius: 5px;
+}
+
+/* Grid */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* Card */
+.amenity-card {
+  background: #f9f9f9;
+  border-radius: 14px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+  cursor: pointer;
+}
+
+.amenity-card:hover {
+  transform: translateY(-8px);
+  background: #ffffff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  border-color: #caa85c;
+}
+
+/* Icon */
+.amenity-card .icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+/* Title */
+.amenity-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e3a2f;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+}

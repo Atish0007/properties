@@ -1,0 +1,85 @@
+/* overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 9999;
+}
+
+/* show overlay */
+.popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* form box */
+.popup-form {
+    position: absolute;
+    right: -400px;
+    top: 0;
+    height: 100%;
+    width: 350px;
+    background: #fff;
+    padding: 30px;
+    transition: all 0.5s  ease;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+}
+
+/* slide in */
+.popup-form.open {
+    right: 0;
+}
+
+/* close btn */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* inputs */
+.popup-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* radio */
+.radio-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* submit */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #2f6b4f, #1c3f2d);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .popup-form {
+        width: 100%;
+        display: grid;
+        justify-content: unset;
+        align-items: baseline;
+    }
+}
