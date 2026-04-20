@@ -9,6 +9,8 @@ import Overview from "./components/Overview";
 import Amenities from "./components/Amenities";
 
 import FloatingButtons from "./components/floatingButtons";
+import Gallery from "./components/Gallery";
+import PlanSection from "./components/PlanSection";
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
       <Overview />
       <About />
       <Amenities />
+      <Gallery />
+      <PlanSection />
 
       {/* <FloatingButtons />   */}
     </>

@@ -49,21 +49,6 @@ function Hero() {
                             </div>
                         </div>
 
-                        {/* <div className="stats">
-                            <div className="stat">
-                              <span> <FaCheckCircle /></span>  <small>UNIT TYPES</small>
-                                <h6>2 & 3 BHK</h6>
-                            </div>
-                            <div className="stat">
-                                <span> <FaCheckCircle /></span> <small>AREA</small>
-                                <h6>838–1213 Sq.Ft.</h6>
-                            </div>
-                            <div className="stat">
-                                <span> <FaCheckCircle /></span> <small>PRICE</small>
-                                <h6>₹1.20 Cr*</h6>
-                            </div>
-                        </div> */}
-
                         <div className="hero-buttons">
                             <button className="btn btn-gold">Get Price</button>
                             <button className="btn btn-outline-light">Explore</button>

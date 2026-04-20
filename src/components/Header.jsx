@@ -75,7 +75,8 @@ function Header() {
             <li className="nav-item">
                 <a className="nav-link" onClick={()=> scrollToSection("amenities")}>Amenities</a>
             </li>
-            <li className="nav-item"><a className="nav-link" href="#">Gallery</a></li>
+            <li className="nav-item"><a className="nav-link" onClick={()=> scrollToSection("gallery")}>Gallery</a></li>
+            <li className="nav-item"><a className="nav-link" onClick={()=> scrollToSection("plans")}>Plans</a></li>
             <li className="nav-item"><a className="nav-link" href="#">Location</a></li>
           </ul>
 

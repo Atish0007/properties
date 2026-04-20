@@ -24,7 +24,7 @@ function PopupForm({ isOpen, onClose }) {
                     <label><input type="radio" name="bhk" /> 3 BHK</label>
                 </div>
 
-                <button className="submit-btn">
+                <button className="submit-btn btn premium-btn">
                     GET DETAILS →
                 </button>
             </div>

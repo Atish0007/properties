@@ -3,24 +3,37 @@
   right: -70px; /* adjust for rotate */
   top: 50%;
   transform: translateY(-50%) rotate(-90deg);
-  
-  background: linear-gradient(45deg, #d4af37, #f5d76e);
-  color: #000;
-
+  background: linear-gradient(45deg, #2f6b4f, #1c3f2d); /* linear-gradient(45deg, #d4af37, #f5d76e) */
+  color: #fff;
   padding: 12px 30px;
   font-weight: 700;
   border-radius: 10px;
   cursor: pointer;
-
   z-index: 9999; 
-
   letter-spacing: 1px;
+  overflow: hidden;
   transition: all 0.5s ease;
 }
 
 /* Hover effect */
 .sticky-btn:hover {
-  background: linear-gradient(45deg, #2f6b4f, #1c3f2d);
-  color: #fff;
+  background: linear-gradient(45deg, #d4af37, #f5d76e); /* linear-gradient(45deg, #2f6b4f, #1c3f2d)*/
+  color: #000;
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.sticky-btn::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4);
+    top: 0;
+    left: -100%;
+    transform: skewX(-20deg);
+    transition: all 0.5s ease;
+}
+
+.sticky-btn:hover::before {
+    left: 120%;
 }

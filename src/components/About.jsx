@@ -13,11 +13,11 @@ function About() {
             <div className="about-content">
 
               <h2>
-                Welcome To <span>Puraniks Abitante</span>
+                Welcome To <span className="headingText">BramhaCorp</span>
               </h2>
 
               <p>
-                Puraniks Abitante in Bavdhan, Pune is a nature-inspired township
+                BramhaCorp in Bavdhan, Pune is a nature-inspired township
                 that redefines luxury through sustainable and wellness-driven design.
                 Sprawling across 34+ acres, this landmark development offers beautifully
                 planned residences with elegant G+20 storey architecture.
@@ -30,7 +30,7 @@ function About() {
                 it caters to modern urban living.
               </p>
 
-              <button className="about-btn">
+              <button className="btn premium-btn">
                 Download Brochure
               </button>
 

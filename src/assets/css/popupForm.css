@@ -67,11 +67,12 @@
 /* submit */
 .submit-btn {
     width: 100%;
-    padding: 12px;
+    padding: 12px !important;
     background: linear-gradient(45deg, #2f6b4f, #1c3f2d);
-    color: #fff;
-    border: none;
-    border-radius: 6px;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    transition: all 0.5s ease;
 }
 
 /* mobile */

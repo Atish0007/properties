@@ -1,77 +1,107 @@
 /* Section */
-.amenities-section {
+.amenities-section-custom {
   padding: 80px 0;
   background: #ffffff;
   font-family: 'Poppins', sans-serif;
 }
 
-/* Normal container (Bootstrap style) */
-.container {
+/* Container */
+.amenities-container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
 }
 
 /* Header */
-.amenities-header {
+.amenities-header-custom {
   text-align: center;
   margin-bottom: 60px;
 }
 
-.amenities-header h2 {
+.amenities-header-custom h2 {
   font-size: 38px;
   font-weight: 600;
   color: #1e3a2f;
 }
 
-.amenities-header p {
+.amenities-header-custom p {
   margin-top: 15px;
   color: #666;
   font-size: 15px;
 }
 
-/* Gold underline */
-.underline {
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #caa85c, #e6d3a3);
+/* Bar */
+.amenities-bar {
+  width: 80px;
+  height: 4px;
   margin: 12px auto;
-  border-radius: 5px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.amenities-bar-fill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #caa85c, #e6d3a3);
+  animation: amenitiesBarAnim 2s infinite alternate;
+}
+
+@keyframes amenitiesBarAnim {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(50%); }
 }
 
 /* Grid */
-.amenities-grid {
+.amenities-grid-custom {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
 }
 
 /* Card */
-.amenity-card {
+.amenity-card-custom {
+  position: relative;
   background: #f9f9f9;
   border-radius: 14px;
   padding: 30px 20px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   border: 1px solid #eee;
   cursor: pointer;
+  overflow: hidden;
 }
 
-.amenity-card:hover {
+.amenity-card-custom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  padding: 2px;
+  background: linear-gradient(120deg, #00fb4a, transparent, #d4af37);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.amenity-card-custom:hover {
   transform: translateY(-8px);
   background: #ffffff;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  border-color: #caa85c;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 0 20px rgba(0, 251, 74, 0.25);
 }
 
 /* Icon */
-.amenity-card .icon {
-  font-size: 32px;
+.amenity-icon-custom img {
+  width: 50px;
   margin-bottom: 12px;
 }
 
 /* Title */
-.amenity-card h3 {
+.amenity-card-custom h3 {
   font-size: 16px;
   font-weight: 500;
   color: #1e3a2f;
@@ -79,13 +109,13 @@
 
 /* Responsive */
 @media (max-width: 992px) {
-  .amenities-grid {
+  .amenities-grid-custom {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 576px) {
-  .amenities-grid {
+  .amenities-grid-custom {
     grid-template-columns: 1fr;
   }
 }

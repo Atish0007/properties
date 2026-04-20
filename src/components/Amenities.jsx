@@ -9,52 +9,52 @@ import kids from "../assets/images/amenities/kids.png";
 import club from "../assets/images/amenities/club.png";
 import jogging from "../assets/images/amenities/jogging.png";
 
- 
+
 const amenitiesData = [
-  { icon: swimming, title: "Swimming Pool" },
-  { icon: gym, title: "Gymnasium" },
-  { icon: garden, title: "Landscaped Gardens" },
-  { icon: sport, title: "Sports Courts" },
-  { icon: yoga, title: "Yoga Deck" },
-  { icon: kids, title: "Kids Play Area" },
-  { icon: club, title: "Clubhouse" },
-  { icon: jogging, title: "Jogging Track" },
+    { icon: swimming, title: "Swimming Pool" },
+    { icon: gym, title: "Gymnasium" },
+    { icon: garden, title: "Landscaped Gardens" },
+    { icon: sport, title: "Sports Courts" },
+    { icon: yoga, title: "Yoga Deck" },
+    { icon: kids, title: "Kids Play Area" },
+    { icon: club, title: "Clubhouse" },
+    { icon: jogging, title: "Jogging Track" },
 ];
 
 const Amenities = () => {
-  return (
-    <section className="amenities-section" id="amenities">
-      <div className="container">
-        
-        {/* Header */}
-        <div className="amenities-header">
-          <h2>Amenities at Puraniks Abitante</h2>
-          {/* <div className="underline"></div> */}
-          <div className="bar">
-                <div className="bar-fill"></div>
-          </div>
+    return (
+        <section className="amenities-section-custom" id="amenities">
+            <div className="amenities-container">
 
-          <p>
-            Experience a lifestyle of comfort and luxury with thoughtfully curated
-            amenities designed for relaxation, wellness, and recreation.
-          </p>
-        </div>
+                <div className="amenities-header-custom">
+                    <h2 className="headingFontSize">
+                        Amenities at <span className="headingText">BramhaCorp</span>
+                    </h2>
 
-        {/* Grid */}
-        <div className="amenities-grid">
-          {amenitiesData.map((item, index) => (
-            <div className="amenity-card" key={index}>
-              <div className="icon">
-                <img src={item.icon} alt={item.title} width="50" height="auto"/>
-              </div>
-              <h3>{item.title}</h3>
+                    <div className="bar">
+                        <div className="bar-fill"></div>
+                    </div>
+
+                    <p>
+                        Experience a lifestyle of comfort and luxury with thoughtfully curated
+                        amenities designed for relaxation, wellness, and recreation.
+                    </p>
+                </div>
+
+                <div className="amenities-grid-custom">
+                    {amenitiesData.map((item, index) => (
+                        <div className="amenity-card-custom" key={index}>
+                            <div className="amenity-icon-custom">
+                                <img src={item.icon} alt={item.title} />
+                            </div>
+                            <h3>{item.title}</h3>
+                        </div>
+                    ))}
+                </div>
+
             </div>
-          ))}
-        </div>
-
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default Amenities;

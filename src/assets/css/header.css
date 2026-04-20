@@ -144,15 +144,6 @@
 
 /*  PREMIUM BUTTON */
 .premium-btn {
-    /* background: linear-gradient(45deg, #d4af37, #f5d76e); /* linear-gradient(45deg, #2d6a3f, #00fb4a) */
-    /* color: #000;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-weight: 600;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s ease;  */
     background: linear-gradient(45deg, #2fd560, #00fb4a);
     color: #000 !important;
     border: none !important;
