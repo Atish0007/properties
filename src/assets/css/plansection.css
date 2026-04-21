@@ -1,7 +1,9 @@
 /* Main Wrapper */
 .ps-wrapper {
     position: relative;
-    background: linear-gradient(135deg, #0a0c10 0%, #12151c 100%);
+    /* background: linear-gradient(135deg, #0a0c10 0%, #12151c 100%); */
+    background: url('../images/plans/plansBG.png') center / cover no-repeat;
+    background-position: 10% 60%;
     padding: 4rem 1.5rem;
     width: 100%;
     overflow: hidden;
@@ -161,7 +163,7 @@
 }
 
 .ps-tabBtn.ps-active {
-    background: linear-gradient(135deg, #1e2433, #141a24);
+    background:  linear-gradient(135deg, #193923, #2b6147); /*linear-gradient(135deg, #1e2433, #141a24);*/
     color: #d4af37;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.2);
 }
@@ -321,14 +323,24 @@
 }
 
 .ps-featureCard {
-    background: rgba(20, 25, 35, 0.7);
+    background: linear-gradient(135deg, rgba(34, 60, 40, 0.6), rgba(20, 40, 30, 0.7));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(212, 175, 55, 0.05);
+    padding: 1.5rem 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    min-width: 200px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: all 0.5s ease;
+    /* background: rgba(20, 25, 35, 0.7);
     backdrop-filter: blur(12px);
     padding: 1.5rem 1.5rem;
     border-radius: 20px;
     text-align: center;
     min-width: 200px;
     border: 1px solid rgba(212, 175, 55, 0.2);
-    transition: all 0.3s;
+    transition: all 0.3s; */
 }
 
 .ps-featureCard:hover {
@@ -780,6 +792,7 @@
     font-size: 40px;
     color: #fff;
     cursor: pointer;
+    z-index:9999 !important;
 }
 
 .ps-previewBtn {
@@ -806,4 +819,11 @@
 .ps-imgPreview {
     transition: transform 0.3s ease;
     cursor: zoom-in;
+}
+.ps-imgPreviewOverlay {
+  touch-action: manipulation;
+}
+
+.ps-imgPreview {
+  touch-action: none;
 }

@@ -181,9 +181,13 @@ const PlanSection = () => {
         const diff = touchStartX - touchEndX;
 
         if (diff > 50) {
-            handleNextImage(e); // swipe left
+            setCurrentImageIndex(prev =>
+                prev === currentTabData.images.length - 1 ? 0 : prev + 1
+            );
         } else if (diff < -50) {
-            handlePrevImage(e); // swipe right
+            setCurrentImageIndex(prev =>
+                prev === 0 ? currentTabData.images.length - 1 : prev - 1
+            );
         }
     };
 
@@ -306,23 +310,44 @@ const PlanSection = () => {
 
 
             {showImagePreview && (
-                <div className="ps-imgPreviewOverlay" onClick={() => {
-                    setShowImagePreview(false);
-                    setZoomLevel(1);
-                }}>
+                <div
+                    className="ps-imgPreviewOverlay"
+                    onClick={() => {
+                        setShowImagePreview(false);
+                        setZoomLevel(1);
+                    }}
+                    onTouchStart={() => {
+                        setShowImagePreview(false);
+                        setZoomLevel(1);
+                    }}
+                >
                     {/*  onClick={() => setShowImagePreview(false)} */}
 
-                    <span className="ps-imgClose">&times;</span>
+                    <span
+                        className="ps-imgClose"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setShowImagePreview(false);
+                            setZoomLevel(1);
+                        }}
+                        onTouchStart={(e) => {
+                            e.stopPropagation();
+                            setShowImagePreview(false);
+                            setZoomLevel(1);
+                        }}
+                    >
+                        &times;
+                    </span>
 
                     <img
                         src={currentImage}
                         alt="preview"
                         className="ps-imgPreview"
                         onClick={(e) => e.stopPropagation()}
+                        onTouchStart={(e) => e.stopPropagation()}
+                        onTouchEnd={handleTouchEnd}
                         onWheel={handleZoom}
                         style={{ transform: `scale(${zoomLevel})` }}
-                        onTouchStart={handleTouchStart}
-                        onTouchEnd={handleTouchEnd}
                     />
 
                     {hasMultipleImages && (
@@ -336,7 +361,7 @@ const PlanSection = () => {
 
                             <button
                                 className="ps-previewBtn ps-next"
-                                onClick={(e) => { e.stopPropagation(); handleNextImage(e); }}
+                                onClick={(e) => { e.stopPropagation(); }}
                             >
                                 <FaChevronRight />
                             </button>

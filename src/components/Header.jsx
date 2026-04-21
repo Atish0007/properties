@@ -4,7 +4,7 @@ import logo from "../assets/images/logo.png";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
-
+  const [open, setOpen] = useState(false);
 
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function Header() {
         setOpen(false);
 
         // close bootstrap menu
-        const menu = document.getElementById("navMenu");
+        const menu = document.getElementById("nav");
         if (menu.classList.contains("show")) {
             menu.classList.remove("show");
         }
