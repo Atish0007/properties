@@ -71,6 +71,9 @@ ul.navbar-nav a.nav-link{
   to { transform: translateX(50%); }
 }
 
+.plansBar{
+  background: linear-gradient(90deg, #d4af37, transparent) ;
+}
 
 
 
