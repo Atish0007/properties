@@ -137,7 +137,7 @@ const PlanSection = () => {
             }, 100);
 
             setSubmitSuccess(true);
-            setTimeout(() => setSubmitSuccess(false), 3000);
+            setTimeout(() => setSubmitSuccess(false), 5000);
             setFormData({ name: '', email: '', phone: '' });
             setCurrentImageIndex(0);
         } catch (err) {
@@ -302,12 +302,12 @@ const PlanSection = () => {
             {/* Success Toast - Improved visibility */}
             {submitSuccess && (
                 <div className="ps-toast">
-                    <span className="ps-toastIcon">✨</span>
-                    <span className="ps-toastMsg">Plans Unlocked! Check your email for confirmation.</span>
+                    <span className="ps-toastIcon"> <FaUnlockAlt /></span>
+                    <span className="ps-toastMsg">Plans Unlocked! Explore your dream space in detail.</span>
                 </div>
             )}
 
-
+ 
 
             {showImagePreview && (
                 <div

@@ -1,0 +1,193 @@
+/* ProjectInfo.css – Clean, Centered RERA with Barcode Image, Responsive */
+
+.project-info {
+  width: 100%;
+  padding: 80px 24px;
+  background: linear-gradient(145deg, #f5f7fc 0%, #e9eef4 100%);
+  /* font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif; */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background (no extra headers) */
+.project-info::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Centered RERA Section – like a barcode card */
+.rera-centered {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.rera-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px 40px;
+  text-align: center;
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.12);
+  border: 1px solid #e2e8f0;
+  max-width: 90%;
+  width: auto;
+}
+
+.rera-line {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #0f172a;
+  letter-spacing: 0.3px;
+}
+
+.rera-line a {
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.rera-line a:hover {
+  text-decoration: underline;
+}
+
+/* Barcode image wrapper and styling */
+.barcode-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.barcode-img {
+  max-width: 100%;
+  height: auto;
+  width: 100px;       /* adjust as needed */
+  border-radius: 8px;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Disclaimer */
+.disclaimer-text {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 28px;
+  padding: 28px 36px;
+  margin-bottom: 32px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #334155;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.disclaimer-text strong {
+  color: #0f172a;
+}
+
+/* Footer */
+.info-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-links a {
+  color: #10b981;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  color: #cbd5e1;
+}
+
+.copyright {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .project-info {
+    padding: 60px 20px;
+  }
+  .rera-card {
+    padding: 18px 28px;
+  }
+  .disclaimer-text {
+    padding: 24px 28px;
+  }
+  .barcode-img {
+    width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .rera-card {
+    padding: 16px 24px;
+  }
+  .rera-line {
+    font-size: 0.9rem;
+  }
+  .disclaimer-text {
+    font-size: 0.8rem;
+    padding: 20px 24px;
+  }
+  .info-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .barcode-img {
+    width: 220px;
+  }
+}
+
+@media (max-width: 580px) {
+  .project-info {
+    padding: 50px 16px;
+  }
+  .rera-card {
+    width: 100%;
+    padding: 14px 16px;
+  }
+  .rera-line {
+    font-size: 0.85rem;
+    word-break: break-word;
+  }
+  .disclaimer-text {
+    padding: 18px 20px;
+  }
+  .barcode-img {
+    width: 180px;
+  }
+}

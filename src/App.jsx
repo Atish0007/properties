@@ -11,6 +11,8 @@ import Amenities from "./components/Amenities";
 import FloatingButtons from "./components/floatingButtons";
 import Gallery from "./components/Gallery";
 import PlanSection from "./components/PlanSection";
+import MapSection from "./components/MapSection";
+import ProjectInfo from "./components/ProjectInfo";
 
 function App() {
 
@@ -27,6 +29,8 @@ function App() {
       <Amenities />
       <Gallery />
       <PlanSection />
+      <MapSection />
+      <ProjectInfo />
 
       {/* <FloatingButtons />   */}
     </>
