@@ -2,7 +2,7 @@ import "../assets/css/hero.css";
 import heroImg from "../assets/images/hero.png";
 import { FaCheckCircle } from "react-icons/fa";
 
-function Hero() {
+function Hero( {openForm} ) {
     return (
         <section
             className="hero"
@@ -15,13 +15,13 @@ function Hero() {
 
                     {/* LEFT */}
                     <div className="col-lg-7 text-white">
-                        <p className="badge-text">NEAR POSSESSION DEC 2026</p>
+                        {/* <p className="badge-text">NEAR POSSESSION DEC 2026</p> */}
 
                         <h1 className="hero-title logoFont">
-                            BRAHMA<span className="logoFont">CORP</span>
+                            मनातले <span className="logoFont"> घर</span>
                         </h1>
 
-                        <p className="hero-sub">Premium Living in Baner, Pune</p>
+                        {/* <p className="hero-sub">Premium Living in Baner, Pune</p>
 
                         <div className="stats d-grid">
                             <div className="stat">
@@ -47,11 +47,11 @@ function Hero() {
                                     <h6>₹1.20 Cr*</h6>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         <div className="hero-buttons">
-                            <button className="btn btn-gold">Get Price</button>
-                            <button className="btn btn-outline-light">Explore</button>
+                            <button className="btn btn-price fw-bold" onClick={()=>openForm ("Get Price")}>Get Price</button>
+                            <button className="btn btn-outline-light fw-bold">Explore</button>
                         </div>
                     </div>
 

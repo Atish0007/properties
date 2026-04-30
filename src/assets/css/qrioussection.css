@@ -1,0 +1,135 @@
+/* SECTION */
+.qrious-sec {
+  padding: 10px 20px;
+  background: #f5f7f6;
+}
+
+/* CONTAINER */
+.qrious-wrapper {
+  /* max-width: 1200px; */
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* LEFT SIDE */
+.qrious-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* BLACK CARD */
+.qrious-card {
+  background: #000;
+  color: #fff;
+  padding: 28px 22px;
+  border-radius: 18px;
+  width: 280px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+
+.qrious-card:hover {
+  transform: translateY(-5px);
+}
+
+/* TEXT */
+.qrious-card p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+/* DIVIDER */
+.qrious-divider {
+  height: 1px;
+  background: #3a3a3a;
+  margin: 10px 0;
+}
+
+/* RIGHT SIDE */
+.qrious-right {
+  flex: 2;
+}
+
+/* TITLE */
+.qrious-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e3d2f;
+  margin-bottom: 15px;
+}
+
+/* DESCRIPTION */
+.qrious-desc {
+  font-size: 15.5px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 22px;
+}
+
+/* BUTTON */
+.qrious-btn {
+  position: relative;  
+  background: linear-gradient(135deg, #2d6a4f, #40916c); /* linear-gradient(135deg, #2e7d32, #1b5e20); */
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.3s ease all;
+}
+
+.qrious-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===================== */
+/* 🔥 RESPONSIVE DESIGN */
+/* ===================== */
+
+/* TABLET */
+@media (max-width: 992px) {
+  .qrious-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .qrious-right {
+    margin-top: 20px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+
+  .qrious-sec {
+    padding: 60px 15px;
+  }
+
+  /* BLACK BOX CENTER (IMPORTANT) */
+  .qrious-card {
+    width: 100%;
+    max-width: 320px;
+    padding: 30px 60px;
+    border-radius: 16px;
+  }
+
+  .qrious-title {
+    font-size: 22px;
+  }
+
+  .qrious-desc {
+    font-size: 14px;
+  }
+
+  .qrious-btn {
+    width: 100%;
+    padding: 12px;
+  }
+}

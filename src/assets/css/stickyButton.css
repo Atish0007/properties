@@ -3,8 +3,8 @@
   right: -70px; /* adjust for rotate */
   top: 50%;
   transform: translateY(-50%) rotate(-90deg);
-  background: linear-gradient(45deg, #2f6b4f, #1c3f2d); /* linear-gradient(45deg, #d4af37, #f5d76e) */
-  color: #fff;
+  background: linear-gradient(45deg, #d4af37, #f5d76e); /* linear-gradient(45deg, #2f6b4f, #1c3f2d); - green  ,  linear-gradient(45deg, #d4af37, #f5d76e) */
+  color: #403636;
   padding: 12px 30px;
   font-weight: 700;
   border-radius: 10px;
@@ -17,7 +17,7 @@
 
 /* Hover effect */
 .sticky-btn:hover {
-  background: linear-gradient(45deg, #d4af37, #f5d76e); /* linear-gradient(45deg, #2f6b4f, #1c3f2d)*/
+  background: #d4af37; /* linear-gradient(45deg, #2f6b4f, #1c3f2d)*/
   color: #000;
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
@@ -36,4 +36,14 @@
 
 .sticky-btn:hover::before {
     left: 120%;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .sticky-btn{
+        padding: 6px 20px;
+    }
+    
 }

@@ -1,5 +1,5 @@
 .custom-navbar {
-    background:  #00000000;/*#000;*/
+    background:  #fff;  /*#00000000;  #000;*/
     backdrop-filter: blur(10px);
     padding: 15px 0;
     transition: all 0.3s ease;
@@ -87,7 +87,7 @@
     bottom: 0;
 }
 
-/* जब menu open आहे */
+/* Menu open */
 .navbar-toggler:not(.collapsed)::before {
     transform: rotate(45deg);
     top: 10px;
@@ -107,16 +107,21 @@
 
 
 .logo {
-    font-family: "Orbitron", sans-serif;
+    font-family: "khand", sans-serif;
     font-weight: 900;
-    color: #fff !important;
-    font-weight: 700;
-    filter: drop-shadow(0px 0px 10px #fff);
+    font-size: 25px !important;
+    background: #d4af37; /* linear-gradient(135deg, #d4af37 0%, #f5e7a3 100%); */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    /* filter: drop-shadow(0px 0px 3px #555); */
+    letter-spacing: 1.5px;
 }
 
 .logo span {
     font-family: inherit;
-    color: #00e744;
+    color: #25915d;
+    /* filter: drop-shadow(0px 0px 1px #555); */
     /*#d4af37;*/
 }
 
@@ -129,9 +134,9 @@
 /* underline animation */
 .nav-link::after {
     content: "";
-    height: 2px;
+    height: 3px;
     width: 0%;
-    background: #00ff4b;
+    background: #40916c;/*#00ff4b;*/
     position: absolute;
     left: 0;
     bottom: 0px;
@@ -144,8 +149,8 @@
 
 /*  PREMIUM BUTTON */
 .premium-btn {
-    background: linear-gradient(45deg, #2fd560, #00fb4a);
-    color: #000 !important;
+    background: linear-gradient(135deg, #2d6a4f, #40916c);  /*linear-gradient(45deg, #2fd560, #00fb4a);*/
+    color: #fff !important;
     border: none !important;
     padding: 8px 20px !important;
     border-radius: 10px !important;
@@ -158,7 +163,7 @@
 .premium-btn:hover {
     color: #fff !important;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(77, 247, 62, 0.5) !important;
+    box-shadow: 0 10px 25px rgba(37, 133, 28, 0.5) !important;
 }
 
 /* shine effect */

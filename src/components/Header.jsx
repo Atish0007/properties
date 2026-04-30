@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../assets/css/header.css";
 import logo from "../assets/images/logo.png";
 
-function Header() {
+function Header({ openForm }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -39,9 +39,9 @@ function Header() {
     <nav className={`navbar navbar-expand-lg fixed-top custom-navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="container">
 
-        <a className="navbar-brand logo logoFont" href="#">
+        <a className="navbar-brand logo" href="#">
             {/* <img src={logo} width="50" height="auto" alt="" style={{transform:"scale(3.5)",marginTop:"6px"}} /> */}
-          BRAHMA<span>CORP</span>
+          मनातले <span>घर</span>
         </a>
 
         {/* <button
@@ -80,7 +80,7 @@ function Header() {
             <li className="nav-item"><a className="nav-link" href="#">Location</a></li>
           </ul>
 
-          <button className="btn premium-btn">
+          <button className="btn premium-btn" onClick={() => openForm("Enquiry Form")}>
             Enquire Now
           </button>
 

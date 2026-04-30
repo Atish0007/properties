@@ -1,60 +1,82 @@
-import React from "react";
+import React, { useState } from "react";
 import "../assets/css/amenities.css";
-import swimming from "../assets/images/amenities/swimming.png";
-import gym from "../assets/images/amenities/gym.png";
-import garden from "../assets/images/amenities/garden.png";
-import sport from "../assets/images/amenities/sport.png";
-import yoga from "../assets/images/amenities/yoga.png";
-import kids from "../assets/images/amenities/kids.png";
-import club from "../assets/images/amenities/club.png";
-import jogging from "../assets/images/amenities/jogging.png";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
 
-const amenitiesData = [
-    { icon: swimming, title: "Swimming Pool" },
-    { icon: gym, title: "Gymnasium" },
-    { icon: garden, title: "Landscaped Gardens" },
-    { icon: sport, title: "Sports Courts" },
-    { icon: yoga, title: "Yoga Deck" },
-    { icon: kids, title: "Kids Play Area" },
-    { icon: club, title: "Clubhouse" },
-    { icon: jogging, title: "Jogging Track" },
-];
+import "swiper/css";
+import "swiper/css/navigation";
+
+// IMAGES
+import kidsPlay from "../assets/images/amenities/kidarea_01.webp";
+import partyLawn from "../assets/images/amenities/party_01.webp";
+import kidsPool from "../assets/images/amenities/kidpool_01.webp";
+import workingPods from "../assets/images/amenities/workpods_01.webp";
+import reflexPath from "../assets/images/amenities/reflexpath_01.webp";
+import infinityPool from "../assets/images/amenities/infipool_01.webp";
 
 const Amenities = () => {
-    return (
-        <section className="amenities-section-custom" id="amenities">
-            <div className="amenities-container">
+  const [preview, setPreview] = useState(null);
 
-                <div className="amenities-header-custom">
-                    <h2 className="headingFontSize">
-                        Amenities at <span className="headingText">BramhaCorp</span>
-                    </h2>
+  const amenitiesData = [
+    { img: kidsPlay, title: "Kids’ Play Area" },
+    { img: partyLawn, title: "Party Lawn" },
+    { img: kidsPool, title: "Kids’ Pool" },
+    { img: workingPods, title: "Working Pods" },
+    { img: reflexPath, title: "Reflexology Path" },
+    { img: infinityPool, title: "Infinity Edge Swimming Pool" },
+  ];
 
-                    <div className="bar">
-                        <div className="bar-fill"></div>
-                    </div>
+  return (
+    <section className="am-sec">
+      <div className="container">
 
-                    <p>
-                        Experience a lifestyle of comfort and luxury with thoughtfully curated
-                        amenities designed for relaxation, wellness, and recreation.
-                    </p>
+        {/* HEADER */}
+        <div className="am-header text-center">
+          <h2 className="headingFontSize mb-0">Amenities</h2>
+          
+          {/* <button className="am-btn">Download Amenities</button> */}
+        </div>
+        <div className="bar mb-5"><div className="bar-fill"></div></div>
+
+        {/* SLIDER */}
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          spaceBetween={20}
+          slidesPerView={3}
+          navigation
+          autoplay={{ delay: 2500 }}
+          loop={true}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            576: { slidesPerView: 2 },
+            992: { slidesPerView: 3 },
+            1400: { slidesPerView: 4 },
+          }}
+        >
+          {amenitiesData.map((item, i) => (
+            <SwiperSlide key={i}>
+              <div className="am-card" onClick={() => setPreview(item.img)}>
+                <img src={item.img} alt={item.title} />
+                <div className="am-overlay">
+                  <span>{item.title}</span>
                 </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-                <div className="amenities-grid-custom">
-                    {amenitiesData.map((item, index) => (
-                        <div className="amenity-card-custom" key={index}>
-                            <div className="amenity-icon-custom">
-                                <img src={item.icon} alt={item.title} />
-                            </div>
-                            <h3>{item.title}</h3>
-                        </div>
-                    ))}
-                </div>
+        {/* PREVIEW */}
+        {preview && (
+          <div className="am-preview" onClick={() => setPreview(null)}>
+            <span className="am-close">✕</span>
+            <img src={preview} alt="preview" />
+          </div>
+        )}
 
-            </div>
-        </section>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default Amenities;

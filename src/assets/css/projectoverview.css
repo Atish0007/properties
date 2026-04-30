@@ -1,0 +1,375 @@
+/* ========================= */
+/* WRAPPER */
+/* ========================= */
+.po-wrapper {
+  padding: 60px 0;
+  background: #f4f8f5;
+}
+
+
+
+/* ========================= */
+/* TOP SECTION */
+/* ========================= */
+.po-top {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/* LEFT */
+.po-left {
+  flex: 1;
+}
+
+.po-heading {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1b4332;
+  margin-bottom: 15px;
+}
+
+.po-description {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.po-brochure-btn {
+  background: linear-gradient(135deg, #2d6a4f, #40916c);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.po-brochure-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* RIGHT IMAGE */
+.po-right {
+  flex: 1;
+  position: relative;
+}
+
+.po-right img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.po-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: #ffffff;
+  color: #333;
+  padding: 5px 12px;
+  font-size: 11px;
+  border-radius: 6px;
+}
+
+/* ========================= */
+/* PRICING SECTION */
+/* ========================= */
+.po-pricing-section {
+  text-align: center;
+}
+
+.po-pricing-title {
+  font-size: 22px;
+  margin-bottom: 30px;
+  color: #1b4332;
+  font-weight: 600;
+}
+
+/* GRID */
+.po-pricing-grid {
+  display: flex;
+  gap: 25px;
+}
+
+/* ========================= */
+/*  PREMIUM CARDS */
+/* ========================= */
+.po-price-card {
+  flex: 1;
+  position: relative;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: 0.35s ease;
+  overflow: hidden;
+  border: 1px solid #e6efe9;
+}
+
+/* TOP GREEN STRIP */
+.po-price-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg, #2d6a4f, #40916c);
+}
+
+/* HOVER EFFECT */
+.po-price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* TEXT */
+.po-price-card h4 {
+  font-size: 20px;
+  color: #1b4332;
+  margin-bottom: 8px;
+}
+
+.po-price-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.po-price-card h5 {
+  font-size: 22px;
+  color: #2d6a4f;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.po-price-card button {
+  background: linear-gradient(135deg, #2d6a4f, #40916c);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; 
+  transition: 0.5s ease all;
+}
+
+.po-price-card button:hover {
+  background: linear-gradient(135deg, #1b4332, #2d6a4f);
+}
+
+
+/* ========================= */
+/*  MOBILE VIEW (IMPORTANT) */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .po-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /*  IMAGE HIDE (as you asked) */
+  .po-right {
+    display: none;
+  }
+
+  /* MOBILE CARD STYLE (LIKE YOUR SCREENSHOT) */
+  .po-left {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+  }
+
+  .po-heading {
+    font-size: 30px;
+  }
+
+  .po-description {
+    font-size: 13px;
+    text-align: justify;
+  }
+
+  .po-brochure-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* PRICING STACK */
+  .po-pricing-grid {
+    flex-direction: column;
+  }
+
+  .po-price-card {
+    padding: 20px;
+  }
+}
+
+/* ========================= */
+/*  LARGE SCREENS */
+/* ========================= */
+@media (min-width: 1200px) {
+  .po-heading {
+    font-size: 36px;
+  }
+
+  .po-description {
+    font-size: 16px;
+  }
+}
+
+
+/* New stat section added */
+
+/* ========================= */
+/* STATS WRAPPER */
+/* ========================= */
+.po-stats-wrapper {
+  margin-top: 60px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e6efe9;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* HEADER */
+.po-stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.po-stats-header h3 {
+  font-size: 18px;
+  color: #1b4332;
+  font-weight: 600;
+}
+
+/* BUTTON */
+.po-stats-btn {
+  position: relative;
+  overflow: hidden; /* important for shine effect */
+  background: #2d6a4f;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s; 
+}
+
+.po-stats-btn:hover {
+  background: #1b4332;
+}
+
+
+
+
+/* GRID */
+.po-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+/* CARD */
+.po-stat-card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e4eee8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 6px 12px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.po-stat-card:hover {
+   cursor: pointer;
+}
+
+/* ICON */
+.po-stat-card svg {
+  font-size: 20px;
+  color: #2d6a4f;
+}
+
+/* TEXT */
+.po-stat-card h4 {
+  font-size: 14px;
+  margin: 0;
+  color: #1b4332;
+}
+
+.po-stat-card p {
+  font-size: 12px;
+  margin: 0;
+  color: #777;
+}
+
+/* HOVER */
+.po-stat-card:hover {
+  transform: translateY(-3px);
+  background: #eef6f1;
+}
+
+/* BADGES */
+.po-badge-green {
+  background: #d8f3dc;
+  color: #1b4332;
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.po-badge-outline {
+  border: 1px solid #2d6a4f;
+  color: #2d6a4f;
+  padding: 0px 8px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* ========================= */
+/*  MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+  .po-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================= */
+/*  TABLET */
+/* ========================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .po-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ========================= */
+/*  LARGE SCREEN */
+/* ========================= */
+@media (min-width: 1400px) {
+  .po-stats-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
