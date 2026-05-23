@@ -18,21 +18,41 @@ function Header({ openForm }) {
 
 
   // Menu Scroll 
-    const scrollToSection = (id) => {
+  // const scrollToSection = (id) => {
+
+  //     document.getElementById(id).scrollIntoView({
+  //         behavior: "smooth"
+  //     });
+
+  //     setOpen(false);
+
+  //     // close bootstrap menu
+  //     const menu = document.getElementById("nav");
+  //     if (menu.classList.contains("show")) {
+  //         menu.classList.remove("show");
+  //     }
+
+  // };
+
+      const scrollToSection = (id) => {
 
         document.getElementById(id).scrollIntoView({
-            behavior: "smooth"
+          behavior: "smooth"
         });
 
-        setOpen(false);
+        // navbar close after click
+        const navbarCollapse = document.getElementById("nav");
 
-        // close bootstrap menu
-        const menu = document.getElementById("nav");
-        if (menu.classList.contains("show")) {
-            menu.classList.remove("show");
+        if (navbarCollapse.classList.contains("show")) {
+
+          // toggler button select
+          const toggler = document.querySelector(".navbar-toggler");
+
+          // auto click toggler
+          toggler.click();
         }
 
-    };
+      };
 
 
   return (
@@ -40,8 +60,8 @@ function Header({ openForm }) {
       <div className="container">
 
         <a className="navbar-brand logo" href="#">
-            {/* <img src={logo} width="50" height="auto" alt="" style={{transform:"scale(3.5)",marginTop:"6px"}} /> */}
-          मनातले <span>घर</span>
+          <img src={logo} width="50" height="auto" alt="" className="logoImg" />
+          {/* मनातले <span>घर</span> */}
         </a>
 
         {/* <button
@@ -53,31 +73,31 @@ function Header({ openForm }) {
           ☰
         </button> */}
 
-            {/* Toggle */}
-            <button
-                className="navbar-toggler collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#nav"
-            >
-                 <span></span>
-                {/* <span className="navbar-toggler-icon"></span> */}
-            </button>
+        {/* Toggle */}
+        <button
+          className="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span></span>
+          {/* <span className="navbar-toggler-icon"></span> */}
+        </button>
 
         <div className="collapse navbar-collapse" id="nav">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-                <a className="nav-link" onClick={()=> scrollToSection("overview")}>Overview</a>
+              <a className="nav-link" onClick={() => scrollToSection("overview")}>Overview</a>
             </li>
             <li className="nav-item">
-                <a className="nav-link" onClick={()=> scrollToSection("about")}>About</a>
+              <a className="nav-link" onClick={() => scrollToSection("about")}>About</a>
             </li>
+            <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("plans")}>Plans</a></li>
             <li className="nav-item">
-                <a className="nav-link" onClick={()=> scrollToSection("amenities")}>Amenities</a>
+              <a className="nav-link" onClick={() => scrollToSection("amenities")}>Amenities</a>
             </li>
-            <li className="nav-item"><a className="nav-link" onClick={()=> scrollToSection("gallery")}>Gallery</a></li>
-            <li className="nav-item"><a className="nav-link" onClick={()=> scrollToSection("plans")}>Plans</a></li>
-            <li className="nav-item"><a className="nav-link" href="#">Location</a></li>
+            {/* <li className="nav-item"><a className="nav-link" onClick={()=> scrollToSection("gallery")}>Gallery</a></li> */}
+            <li className="nav-item"><a className="nav-link" onClick={() => scrollToSection("location")}>Location</a></li>
           </ul>
 
           <button className="btn premium-btn" onClick={() => openForm("Enquiry Form")}>

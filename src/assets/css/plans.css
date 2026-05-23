@@ -1,6 +1,6 @@
 /* SECTION */
 .pl-sec {
-    padding: 70px 0;
+    padding: 0px 0;
     background: #f5f7f6;
 }
 
@@ -21,12 +21,32 @@
 .pl-title {
     font-size: 18px;
     font-weight: 600;
-    margin: 10px 110px;
-    color: #1e3d2f;
-    background: #d8f3dc;
+    margin: 15px 80px;
+    color: #fff; /*#1e3d2f;*/
+    background: #58ad87; /* background: #d8f3dc; */
     padding: 10px;
     border-radius: 25px;
+    filter: drop-shadow(0px 0px 4px #58ad87);
 }
+
+/* .pl-title {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.pl-title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(115deg, #c9a03d, #f9e0a0, #c9a03d, #b8860b);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+} */
 
 /* IMAGE */
 .pl-img-box {
@@ -379,7 +399,7 @@
 /* CTA TEXT PREMIUM */
 .cta-text {
     backdrop-filter: blur(6px);
-    border-radius: 6px;
+    border-radius: 0px;
 }
 
 /* RESPONSIVE IMPROVEMENT */
@@ -391,6 +411,11 @@
 }
 
 @media (max-width: 768px) {
+    .pl-sec {
+        padding: 15px 0;
+        background: #f5f7f6;
+    }
+
     .pl-wrapper {
         gap: 25px;
     }
@@ -398,5 +423,75 @@
     .pl-title {
         font-size: 16px;
         margin: 10px;
+    }
+}
+
+
+/* New For LEGAL DOCS CSS */
+.legal-docs-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.legal-doc-card {
+    width: 320px;
+    height: 140px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background: linear-gradient(135deg, #1b4332, #2d6a4f);
+    transition: 0.4s ease;
+}
+
+.legal-doc-card:hover {
+    transform: translateY(-5px);
+}
+
+.legal-doc-overlay {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.legal-doc-overlay h4 {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.legal-doc-overlay button {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-weight: 600;
+}
+
+.legal-blur {
+    filter: blur(0px);
+    opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+    .legal-doc-card {
+        width: 100%;
+        height: 120px;
+    }
+
+    .legal-doc-overlay h4 {
+        font-size: 18px;
     }
 }

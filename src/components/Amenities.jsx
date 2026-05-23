@@ -15,20 +15,35 @@ import workingPods from "../assets/images/amenities/workpods_01.webp";
 import reflexPath from "../assets/images/amenities/reflexpath_01.webp";
 import infinityPool from "../assets/images/amenities/infipool_01.webp";
 
+import img1 from "../assets/images/amenities/img1.jpeg";
+import img2 from "../assets/images/amenities/img2.jpeg";
+import img3 from "../assets/images/amenities/img3.jpeg";
+import img4 from "../assets/images/amenities/img4.jpeg";
+import img5 from "../assets/images/amenities/img5.jpeg";
+
 const Amenities = () => {
   const [preview, setPreview] = useState(null);
 
-  const amenitiesData = [
-    { img: kidsPlay, title: "Kids’ Play Area" },
-    { img: partyLawn, title: "Party Lawn" },
-    { img: kidsPool, title: "Kids’ Pool" },
-    { img: workingPods, title: "Working Pods" },
-    { img: reflexPath, title: "Reflexology Path" },
-    { img: infinityPool, title: "Infinity Edge Swimming Pool" },
+  // const amenitiesData = [
+  //   { img: kidsPlay, title: "Kids’ Play Area" },
+  //   { img: partyLawn, title: "Party Lawn" },
+  //   { img: kidsPool, title: "Kids’ Pool" },
+  //   { img: workingPods, title: "Working Pods" },
+  //   { img: reflexPath, title: "Reflexology Path" },
+  //   { img: infinityPool, title: "Infinity Edge Swimming Pool" },
+  // ];
+
+   const amenitiesData = [
+    { img: img1, title: "Quiet Scented Garden" },
+    { img: img2, title: "Game Zone" },
+    { img: img3, title: "Infinity Edge Swimming Pool" }, //Kids’ Pool
+    { img: img4, title: "Indoor Cafe" }, //Co-Working Spaces, Working Pods
+    { img: img5, title: "Guest Rooms" },
+    // { img: infinityPool, title: "" },
   ];
 
   return (
-    <section className="am-sec">
+    <section className="am-sec" id="amenities">
       <div className="container">
 
         {/* HEADER */}

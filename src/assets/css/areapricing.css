@@ -1,0 +1,109 @@
+/* ========================= */
+/* AREA & PRICING SECTION */
+/* ========================= */
+
+.ap-section {
+    padding: 50px 0;
+    background: #f4f8f5;
+    text-align: center;
+}
+
+.ap-title {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #1b4332;
+    font-weight: 600;
+}
+
+/* GRID */
+.ap-grid {
+    display: flex;
+    gap: 25px;
+}
+
+/* ========================= */
+/* CARDS */
+/* ========================= */
+
+.ap-card {
+    flex: 1;
+    position: relative;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: 0.35s ease;
+    overflow: hidden;
+    border: 1px solid #e6efe9;
+}
+
+/* TOP STRIP */
+.ap-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, #2d6a4f, #40916c);
+}
+
+/* HOVER */
+.ap-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* TEXT */
+.ap-card h4 {
+    font-size: 20px;
+    color: #1b4332;
+    margin-bottom: 8px;
+}
+
+.ap-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.ap-card h5 {
+    font-size: 22px;
+    color: #2d6a4f;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* BUTTON */
+.ap-card button {
+    background: linear-gradient(135deg, #2d6a4f, #40916c);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s ease all;
+}
+
+.ap-card button:hover {
+    background: linear-gradient(135deg, #1b4332, #2d6a4f);
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .ap-grid {
+        flex-direction: column;
+    }
+
+    .ap-card {
+        padding: 20px;
+    }
+}

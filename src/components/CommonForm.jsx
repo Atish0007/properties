@@ -139,7 +139,7 @@ const CommonForm = ({ isOpen, onClose, title, onSuccess }) => {
                         />
                         {errors.email && <span className="cf-error-text">{errors.email}</span>}
 
-                        <button type="submit" disabled={isSubmitting}>
+                        <button type="submit" disabled={isSubmitting} className="cstshine" style={{"position":"relative","overflow":"hidden"}}>
                             {isSubmitting ? <span className="cf-loader"></span> : "Submit"}
                         </button>
 

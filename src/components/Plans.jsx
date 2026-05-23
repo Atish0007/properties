@@ -5,7 +5,10 @@ import emailjs from "@emailjs/browser";
 import masterplan from "../assets/images/plans/masterplan.jpeg";
 import unitplan from "../assets/images/plans/unitplan45.jpeg";
 
-const Plans = ({ openForm, unlocked  }) => {
+import titleReportPdf from "../assets/docs/Title Report.pdf";
+import ccPdf from "../assets/docs/CC.pdf";
+
+const Plans = ({ openForm, unlocked }) => {
   const [showForm, setShowForm] = useState(false);
   //const [unlocked, setUnlocked] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -73,16 +76,17 @@ const Plans = ({ openForm, unlocked  }) => {
 
         setTimeout(() => setShowToast(false), 4000);
 
-        const phoneNumber = "919766096925";
-        const message = `Hello, I am interested in Plans.
-Name: ${formData.name}
-Phone: ${formData.phone}`;
+        //         const phoneNumber = "919766096925";
+        //         const message = `Hello, I am interested in Plans.
+        // Name: ${formData.name}
+        // Phone: ${formData.phone}`;
 
-        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        //         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-        setTimeout(() => {
-          window.open(url, "_blank");
-        }, 1500);
+        //         setTimeout(() => {
+        //           window.open(url, "_blank");
+        //         }, 1500);
+
       })
       .catch(() => {
         alert("Failed to send. Try again!");
@@ -100,9 +104,60 @@ Phone: ${formData.phone}`;
     }
   };
 
+  const handlePdfClick = (pdfFile) => {
+    if (!unlocked) {
+      openForm("Legal Documents");
+    } else {
+      window.open(pdfFile, "_blank");
+    }
+  };
+
   return (
-    <section className="pl-sec">
+    <section className="pl-sec" id="plans">
+
+      <h2 className="headingFontSize text-center">Documents</h2>
+      <div className="bar mb-md-4 mb-4">
+        <div className="bar-fill"></div>
+      </div>
+
       <div className="container">
+
+        {/* LEGAL DOCUMENTS */}
+        <div className="legal-docs-wrapper">
+
+          <div
+            className={`legal-doc-card ${!unlocked ? "legal-blur" : ""}`}
+            onClick={() => handlePdfClick(titleReportPdf)}
+          >
+            <div className="legal-doc-overlay">
+              <h4>Legal Title Report</h4>
+
+              {!unlocked && (
+                <button>Request Document</button>
+              )}
+            </div>
+          </div>
+
+          <div
+            className={`legal-doc-card ${!unlocked ? "legal-blur" : ""}`}
+            onClick={() => handlePdfClick(ccPdf)}
+          >
+            <div className="legal-doc-overlay">
+              <h4>Commencement Certificate</h4>
+
+              {!unlocked && (
+                <button>Request Document</button>
+              )}
+            </div>
+          </div>
+
+        </div>
+
+
+        <h2 className="headingFontSize text-center">Plans</h2>
+        <div className="bar mb-md-3 mb-4">
+          <div className="bar-fill"></div>
+        </div>
 
         <div className="pl-wrapper">
 
@@ -169,8 +224,8 @@ Phone: ${formData.phone}`;
                   onChange={handleChange}
                   maxLength={10}
                   onKeyPress={(e) => {
-                        if (!/[0-9]/.test(e.key)) e.preventDefault();
-                    }}
+                    if (!/[0-9]/.test(e.key)) e.preventDefault();
+                  }}
                   className={errors.phone ? "error" : ""}
                 />
                 {errors.phone && <span className="error-text">{errors.phone}</span>}
@@ -202,7 +257,7 @@ Phone: ${formData.phone}`;
         )}
 
         {showToast && (
-          <div className="pl-toast">✅ Plans Unlocked Successfully!</div>
+          <div className="pl-toast"> Plans Unlocked Successfully!</div>
         )}
 
       </div>

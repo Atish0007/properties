@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/css/projectinfo.css";
 // Import barcode image (change path as per your project)
-import barcodeImage from "../assets/images/barcode.png";  // 👈 replace with your actual barcode image
+import barcodeImage from "../assets/images/barcodenew.jpg";  
 
 const ProjectInfo = () => {
     return (
@@ -20,11 +20,11 @@ const ProjectInfo = () => {
                             />
                         </div>
 
-                        <p className="rera-line">
+                        {/* <p className="rera-line">
                             <strong>Agent MahaRERA No.</strong> – A011262500839
-                        </p>
+                        </p> */}
                         <p className="rera-line">
-                            <strong>Project MahaRERA No.</strong> – P52100048742 &nbsp;
+                            <strong>Project MahaRERA No.</strong> – PR1261012600258 &nbsp;
                             <a
                                 href="https://maharera.maharashtra.gov.in/"
                                 target="_blank"

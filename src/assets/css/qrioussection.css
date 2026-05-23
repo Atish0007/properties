@@ -38,7 +38,7 @@
 
 /* TEXT */
 .qrious-card p {
-  font-size: 13.5px;
+  font-size: 19.3px;  /*13.5px;*/
   line-height: 1.6;
   margin: 12px 0;
 }
@@ -57,7 +57,7 @@
 
 /* TITLE */
 .qrious-title {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
   color: #1e3d2f;
   margin-bottom: 15px;
@@ -68,7 +68,7 @@
   font-size: 15.5px;
   color: #555;
   line-height: 1.8;
-  margin-bottom: 22px;
+  margin-bottom: 5px;
 }
 
 /* BUTTON */
@@ -109,7 +109,7 @@
 @media (max-width: 576px) {
 
   .qrious-sec {
-    padding: 60px 15px;
+    padding: 10px 5px;
   }
 
   /* BLACK BOX CENTER (IMPORTANT) */
