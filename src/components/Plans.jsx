@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../assets/css/plans.css";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
 import masterplan from "../assets/images/plans/masterplan.jpeg";
 import unitplan from "../assets/images/plans/unitplan45.jpeg";
@@ -8,7 +8,7 @@ import unitplan from "../assets/images/plans/unitplan45.jpeg";
 import titleReportPdf from "../assets/docs/Title Report.pdf";
 import ccPdf from "../assets/docs/CC.pdf";
 
-const Plans = ({ openForm, unlocked }) => {
+const Plans = ({ openForm, documentsUnlocked, plansUnlocked }) => {
   const [showForm, setShowForm] = useState(false);
   //const [unlocked, setUnlocked] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,53 +51,53 @@ const Plans = ({ openForm, unlocked }) => {
     setErrors({ ...errors, [e.target.name]: "" });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    if (!validate()) return;
+  //   if (!validate()) return;
 
-    setIsSubmitting(true);
+  //   setIsSubmitting(true);
 
-    emailjs
-      .send(
-        "service_s8gqyej",
-        "template_tu67rcz",
-        {
-          from_name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-        },
-        "6Hzlr8ke7bZzeSxxj"
-      )
-      .then(() => {
-        //setUnlocked(true);
-        setShowForm(false);
-        setShowToast(true);
+  //   emailjs
+  //     .send(
+  //       "service_s8gqyej",
+  //       "template_tu67rcz",
+  //       {
+  //         from_name: formData.name,
+  //         phone: formData.phone,
+  //         email: formData.email,
+  //       },
+  //       "6Hzlr8ke7bZzeSxxj"
+  //     )
+  //     .then(() => {
+  //       //setUnlocked(true);
+  //       setShowForm(false);
+  //       setShowToast(true);
 
-        setTimeout(() => setShowToast(false), 4000);
+  //       setTimeout(() => setShowToast(false), 4000);
 
-        //         const phoneNumber = "919766096925";
-        //         const message = `Hello, I am interested in Plans.
-        // Name: ${formData.name}
-        // Phone: ${formData.phone}`;
+  //       //         const phoneNumber = "919766096925";
+  //       //         const message = `Hello, I am interested in Plans.
+  //       // Name: ${formData.name}
+  //       // Phone: ${formData.phone}`;
 
-        //         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  //       //         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-        //         setTimeout(() => {
-        //           window.open(url, "_blank");
-        //         }, 1500);
+  //       //         setTimeout(() => {
+  //       //           window.open(url, "_blank");
+  //       //         }, 1500);
 
-      })
-      .catch(() => {
-        alert("Failed to send. Try again!");
-      })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
-  };
+  //     })
+  //     .catch(() => {
+  //       alert("Failed to send. Try again!");
+  //     })
+  //     .finally(() => {
+  //       setIsSubmitting(false);
+  //     });
+  // };
 
   const handleImageClick = (img) => {
-    if (!unlocked) {
+    if (!plansUnlocked) {
       openForm("Floor Plans"); //setShowForm(true);
     } else {
       setPreviewImg(img);
@@ -105,7 +105,7 @@ const Plans = ({ openForm, unlocked }) => {
   };
 
   const handlePdfClick = (pdfFile) => {
-    if (!unlocked) {
+    if (!documentsUnlocked) {
       openForm("Legal Documents");
     } else {
       window.open(pdfFile, "_blank");
@@ -126,27 +126,33 @@ const Plans = ({ openForm, unlocked }) => {
         <div className="legal-docs-wrapper">
 
           <div
-            className={`legal-doc-card ${!unlocked ? "legal-blur" : ""}`}
+            className={`legal-doc-card ${!documentsUnlocked ? "legal-blur" : ""}`}
             onClick={() => handlePdfClick(titleReportPdf)}
           >
             <div className="legal-doc-overlay">
               <h4>Legal Title Report</h4>
 
-              {!unlocked && (
+              {!documentsUnlocked && (
                 <button>Request Document</button>
+              )}
+              {documentsUnlocked && (
+                <h6 className="unlockedText">Click here to get Legal Title Report</h6>
               )}
             </div>
           </div>
 
           <div
-            className={`legal-doc-card ${!unlocked ? "legal-blur" : ""}`}
+            className={`legal-doc-card ${!documentsUnlocked ? "legal-blur" : ""}`}
             onClick={() => handlePdfClick(ccPdf)}
           >
             <div className="legal-doc-overlay">
               <h4>Commencement Certificate</h4>
 
-              {!unlocked && (
+              {!documentsUnlocked && (
                 <button>Request Document</button>
+              )}
+              {documentsUnlocked && (
+                <h6 className="unlockedText">Click here to get Commencement Certificate</h6>
               )}
             </div>
           </div>
@@ -165,13 +171,13 @@ const Plans = ({ openForm, unlocked }) => {
             <h4 className="pl-title fw-bold">Master Plan Layout</h4>
 
             <div
-              className={`pl-img-box ${!unlocked ? "pl-blur" : ""}`}
+              className={`pl-img-box ${!plansUnlocked ? "pl-blur" : ""}`}
               onClick={() => handleImageClick(masterplan)}
             >
-              <span className="cta-text" style={{ display: !unlocked ? "block" : "none" }}>Request Master Plan Layout</span>
+              <span className="cta-text" style={{ display: !plansUnlocked ? "block" : "none" }}>Request Master Plan Layout</span>
               <img src={masterplan} alt="Master Plan" />
 
-              {!unlocked && (
+              {!plansUnlocked && (
                 <div className="pl-overlay">
                   <button>Request Master Plan Layout</button>
                 </div>
@@ -183,13 +189,13 @@ const Plans = ({ openForm, unlocked }) => {
             <h4 className="pl-title fw-bold">Unit Plan Layout</h4>
 
             <div
-              className={`pl-img-box ${!unlocked ? "pl-blur" : ""}`}
+              className={`pl-img-box ${!plansUnlocked ? "pl-blur" : ""}`}
               onClick={() => handleImageClick(unitplan)}
             >
-              <span className="cta-text" style={{ display: !unlocked ? "block" : "none" }}>Request Unit Plan Layout</span>
+              <span className="cta-text" style={{ display: !plansUnlocked ? "block" : "none" }}>Request Unit Plan Layout</span>
               <img src={unitplan} alt="Unit Plan" />
 
-              {!unlocked && (
+              {!plansUnlocked && (
                 <div className="pl-overlay">
                   <button>Request Unit Plan Layout</button>
                 </div>
@@ -200,7 +206,7 @@ const Plans = ({ openForm, unlocked }) => {
         </div>
 
         {/* FORM */}
-        {showForm && (
+        {/* {showForm && (
           <div className="pl-glass-modal">
             <div className="pl-glass-box">
 
@@ -258,7 +264,7 @@ const Plans = ({ openForm, unlocked }) => {
 
         {showToast && (
           <div className="pl-toast"> Plans Unlocked Successfully!</div>
-        )}
+        )} */}
 
       </div>
     </section>

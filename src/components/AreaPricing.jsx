@@ -25,6 +25,20 @@ const AreaPricing = ({ openForm }) => {
 
                     {/* CARD 2 */}
                     <div className="ap-card">
+                        <h4>2.5 BHK</h4>
+                        <p>932 sq.ft.</p>
+                        <h5>₹ 97 Lacs* Onwards</h5>
+
+                        <button
+                            className="cstshine"
+                            onClick={() => openForm("Area & Pricing")}
+                        >
+                            Express Your Interest
+                        </button>
+                    </div>
+
+                    {/* CARD 3 */}
+                    <div className="ap-card">
                         <h4>3 BHK</h4>
                         <p>1000 sq.ft.</p>
                         <h5>₹ 1 Cr* Onwards</h5>

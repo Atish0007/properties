@@ -88,3 +88,39 @@
         align-items: baseline; */
     }
 }
+
+/* Toast Message CSS */
+.pf-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #1b4332;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    z-index: 9999;
+    animation: slideIn 0.3s ease;
+}
+
+.pf-toast.error {
+    background: #c62828;
+}
+
+.pf-toast.success {
+    background: #1b4332;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

@@ -130,7 +130,7 @@ const ProjectOverview = ({ openForm }) => {
                         <div className="po-stat-card">
                             <FaLayerGroup />
                             <div>
-                                <h4>B+G+22</h4>
+                                <h4>21</h4>
                                 <p>Floors</p>
                             </div>
                         </div>

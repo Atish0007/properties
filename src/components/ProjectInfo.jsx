@@ -33,6 +33,8 @@ const ProjectInfo = () => {
                                 (https://maharera.maharashtra.gov.in/)
                             </a>
                         </p>
+                        <p className="rera-line">
+                            <strong>Agent MahaRERA No.</strong> - A52100033958</p>
 
                     </div>
                 </div>
@@ -52,7 +54,7 @@ const ProjectInfo = () => {
                         <a href="#">Terms & Conditions</a>
                     </div>
                     <div className="copyright">
-                        All Rights Reserved. © {new Date().getFullYear()} <span style={{color: "#d4af37"}}>मनातले</span>  <span className="headingText">घर</span>.
+                        All Rights Reserved. © {new Date().getFullYear()} <span style={{color: "#ffc300"}}>मनातले</span>  <span className="headingText">घर</span>.
                     </div>
                 </div>
             </div>

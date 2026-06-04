@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import './App.css'
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -33,23 +33,30 @@ function App() {
 
   const [showForm, setShowForm] = useState(false);
   const [formTitle, setFormTitle] = useState("");
-  const [unlockPlans, setUnlockPlans] = useState(false);
+  // const [unlockPlans, setUnlockPlans] = useState(false);
+
+  // Plans page only
+  const [documentsUnlocked, setDocumentsUnlocked] = useState(false);
+  const [plansUnlocked, setPlansUnlocked] = useState(false);
+
+  const [currentFormType, setCurrentFormType] = useState("");
 
   const openForm = (title) => {
     setFormTitle(title);
+    setCurrentFormType(title); // new added
     setShowForm(true);
   };
 
   return (
     <>
-      <Header openForm={openForm}/>
-      <Hero openForm={openForm}/>
+      <Header openForm={openForm} />
+      <Hero openForm={openForm} />
       <StickyButton onClick={() => setOpen(true)} />
       <PopupForm isOpen={open} onClose={() => setOpen(false)} />
-      <ProjectOverview openForm={openForm}/>
+      <ProjectOverview openForm={openForm} />
       <QriousSection openForm={openForm} />
       <AreaPricing openForm={openForm} />
-      <Plans openForm={openForm} unlocked={unlockPlans} />
+      <Plans openForm={openForm} documentsUnlocked={documentsUnlocked} plansUnlocked={plansUnlocked} />
       <Amenities />
       <LocationSection openForm={openForm} />
       <ApprovedBanks />
@@ -67,7 +74,18 @@ function App() {
         isOpen={showForm}
         onClose={() => setShowForm(false)}
         title={formTitle}
-        onSuccess={() => setUnlockPlans(true)}
+        // onSuccess={() => setUnlockPlans(true)}
+        onSuccess={() => {
+
+          if (currentFormType === "Legal Documents") {
+            setDocumentsUnlocked(true);
+          }
+
+          if (currentFormType === "Floor Plans") {
+            setPlansUnlocked(true);
+          }
+
+        }}
       />
 
       {/* <FloatingButtons />   */}

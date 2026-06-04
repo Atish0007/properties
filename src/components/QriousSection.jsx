@@ -38,18 +38,18 @@ const QriousSection = ({ openForm }) => {
                         Kolte Patil Life the winds Qrious
                     </h2>
                     <div className="po-description-wrapper">
-                        <p className="qrious-desc">
+                        <p className="qrious-desc text-justify">
                             Experience elevated living in the heart of Bhugaon with a landmark residential address crafted for those who seek exclusivity, sophistication, and long-term value. Surrounded by serene hills and lush landscapes, this premium development blends contemporary architecture with thoughtfully curated lifestyle experiences, creating a refined sanctuary away from the city’s chaos while remaining exceptionally connected to Pune’s prime destinations.
                         </p>
 
                         <div className={`po-mobile-extra ${showMore ? "show" : ""}`}>
-                            <p className="qrious-desc">
+                            <p className="qrious-desc text-justify">
                                 Designed for discerning homeowners, the project offers spacious 2, 2.5, and 3 BHK residences with elegant layouts, expansive balconies, abundant natural light, and panoramic hill views that redefine modern luxury living. Every detail — from the grand arrival experience and vehicle-free podium to multi-level landscaped spaces and 50+ premium amenities — has been planned to deliver comfort, privacy, and effortless convenience.
                             </p>
-                            <p className="qrious-desc">
+                            <p className="qrious-desc text-justify">
                                 Strategically located near Kothrud, Bavdhan, and the Mumbai–Pune Expressway, the development enjoys seamless access to Pune’s leading IT parks, business districts, reputed schools, luxury retail, and fine dining destinations. Upcoming infrastructure upgrades and enhanced connectivity further position Bhugaon as one of Pune’s most promising luxury investment corridors.
                             </p>
-                            <p className="qrious-desc">
+                            <p className="qrious-desc text-justify">
                                 More than just a residence, this is a lifestyle destination created for modern families who value prestige, wellness, connectivity, and future appreciation. Whether it’s peaceful mornings overlooking green vistas, world-class amenities for recreation and wellness, or the confidence of investing in a rapidly growing location, every aspect of this development is designed to offer an exceptional standard of living.
                             </p>
                         </div>

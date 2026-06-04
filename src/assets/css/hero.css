@@ -31,7 +31,7 @@
 /* PREMIUM BADGE */
 .premium-badge {
     display: inline-block;
-    background: rgb(255 255 255 / 24%);
+    background: rgb(159 159 159 / 24%); /* rgb(255 255 255 / 24%); */
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 40px;
@@ -48,7 +48,7 @@
 .hero-title {
     font-size: 60px;
     font-weight: 800;
-    background: linear-gradient(135deg, #d4af37 0%, #f5e7a3 100%);
+    background: linear-gradient(45deg, #ffc300, #f5d76e);  /*linear-gradient(135deg, #d4af37 0%, #f5e7a3 100%);*/
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -98,7 +98,7 @@
 .hero-tagline {
     font-size: 20px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.95);
+    color: rgb(0 0 0 / 95%); /*rgba(255, 255, 255, 0.95);*/
     margin-bottom: 28px;
     letter-spacing: 0.3px;
     border-left: 3px solid #d4af37;
@@ -151,7 +151,7 @@
 .btn-outline-success {
     position: relative;
     overflow: hidden;
-    border: 1.5px solid #f1f1f1 !important;
+    border: 0.5px solid #bdb8b8 !important; /*1.5px solid #f1f1f1 !important; */
     color: #00552e !important;
     /* dfad04, #198754 005f33 */
     background: rgba(0, 0, 0, 0.3);
@@ -165,11 +165,12 @@
 }
 
 .btn-outline-success:hover {
-    background: #d4af37;
+    background: linear-gradient(180deg, #ffc300, #f5d76e);
+    border: 1px solid #fec50e !important;
     color: #fff !important;
     transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(64, 145, 108, 0.5);
-    /* box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4); */
+    /* box-shadow: 0 12px 28px rgba(64, 145, 108, 0.5); */
+    box-shadow: 0 10px 25px rgb(245 187 0 / 40%);
 }
 
 /* FEATURES ROW - Premium Homes, Prime Location, Trusted Developer, Eco-Friendly */

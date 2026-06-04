@@ -13,7 +13,7 @@ function Hero({ openForm }) {
         <>
 
             <section className="hero desktop-hero">
-                <div className="hero-overlay"></div>
+                {/* <div className="hero-overlay"></div> */}
 
                 <div className="container hero-content">
                     <div className="row align-items-center">

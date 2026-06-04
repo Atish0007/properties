@@ -50,7 +50,7 @@ const AboutDeveloper = () => {
 
 
                         {/* DESCRIPTION */}
-                        <div className="developer-description">
+                        <div className="developer-description text-justify">
                             <p>
                                 Kolte Patil Developers is one of India's leading real estate
                                 brands known for premium residential and commercial projects.
